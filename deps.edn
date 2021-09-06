@@ -1,0 +1,9 @@
+{:paths ["src" "resources"]
+ :deps {metosin/reitit-frontend {:mvn/version "0.5.15"}
+        io.github.nextjournal/viewers {:git/url "git@github.com:nextjournal/viewers.git"
+                                       :git/sha "4cf5d21601719b7a07166601961107fd5a2d7478"}}
+
+ :aliases
+ {:shadow {:extra-deps {thheller/shadow-cljs {:mvn/version "2.15.3"}
+                        cider/cider-nrepl    {:mvn/version "0.26.0"}}
+           :main-opts ["-m" "shadow.cljs.devtools.cli"]}}}

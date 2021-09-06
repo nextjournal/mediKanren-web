@@ -1,0 +1,13 @@
+.DS_Store
+.cache/
+.cpcache/
+.lsp/
+.nrepl-port
+/node_modules/
+/.shadow-cljs/
+.idea/
+medikanren.iml
+/public/images/
+/public/css/
+/public/js/
+yarn.lock
