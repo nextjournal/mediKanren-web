@@ -22,6 +22,11 @@
 
   release:cljs {:doc "Builds a cljs release artifact of the example app"
                 :task (clojure "-M:shadow release browser")
-                :depends [yarn-install]}}
+                :depends [yarn-install]}
 
+  release {:doc "Builds all artifacts needed for a release"
+           :depends [release:cljs build:css]}}
+
+ :deps {io.github.nextjournal/viewers {:git/url "git@github.com:nextjournal/viewers.git"
+                                       :git/sha "4cf5d21601719b7a07166601961107fd5a2d7478"}}
  :min-bb-version "0.5.1"}
