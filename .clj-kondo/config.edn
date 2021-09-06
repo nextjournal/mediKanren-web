@@ -1,0 +1,16 @@
+{:lint-as {applied-science.js-interop/defn clojure.core/defn
+           applied-science.js-interop/fn clojure.core/fn
+           applied-science.js-interop/let clojure.core/let
+           reagent.core/with-let clojure.core/let
+           nextjournal.devcards/defcard clojure.core/def}
+ :skip-args [nextjournal.devcards/defcard]
+ :skip-comments true
+ :linters {:consistent-alias {:aliases {nextjournal.log log
+                                        clojure.string str}}
+           :unresolved-symbol {:exclude [(cljs.core.match/match)
+                                         (cljs.test/is [match?])
+                                         (clojure.test/is [match?])
+                                         (clojure.core.match/match)]}
+           :unused-namespace {:exclude [clojure.string
+                                        nextjournal.devcards
+                                        nextjournal.log]}}}
