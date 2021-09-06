@@ -21,6 +21,7 @@
        :task (run '-dev {:parallel true})}
 
   release:cljs {:doc "Builds a cljs release artifact of the example app"
-                :task (clojure "-M:shadow release browser")}}
+                :task (clojure "-M:shadow release browser")
+                :depends [yarn-install]}}
 
  :min-bb-version "0.5.1"}
