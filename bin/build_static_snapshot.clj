@@ -10,8 +10,11 @@
 (fs/copy "public/js/medikanren.js" "build/js/medikanren.js")
 
 ;;CSS
+(io/copy (io/file (io/resource "public/css/viewer.css"))
+         (io/file "build/css/viewer.css"))
 (fs/copy "public/css/app.css" "build/css/app.css")
 
 ;;Images
 (fs/copy-tree "public/images" "build/images")
+
 ;;Data
