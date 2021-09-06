@@ -127,7 +127,7 @@
 (dc/defcard explorer
   [:div.text-sm
    [:div.flex.flex-col.items-center.justify-center.my-6.pb-6.border-b-2.border-indigo-100
-    [:img.mb-3 {:src "/images/logo-medikanren.svg"}]
+    [:img.mb-3 {:src "images/logo-medikanren.svg"}]
     [:h1.font-bold.text-3xl.leading-none [:span.text-indigo-600 "medi"] [:span "Kanren"]]]
    [:div.grid.grid-cols-2.gap-8
     [:div
