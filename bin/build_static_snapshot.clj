@@ -13,4 +13,5 @@
 (fs/copy "public/css/app.css" "build/css/app.css")
 
 ;;Images
+(fs/copy-tree "public/images" "build/images")
 ;;Data

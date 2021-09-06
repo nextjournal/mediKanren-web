@@ -7,7 +7,7 @@
 /.shadow-cljs/
 .idea/
 mediKanren-web.iml
-/public/images/
 /public/css/
 /public/js/
 yarn.lock
+/build/

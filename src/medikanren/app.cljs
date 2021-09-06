@@ -89,7 +89,7 @@
 
 (defn property-value-table [data]
   [:div.overflow-x-auto.rounded.shadow.border.border-gray-300.flex-auto
-   {:style {:min-width 200 :min-height 100}}
+   {:style {:min-height 100}}
    [:table.divide-y.divide-gray-200.text-xs.min-w-full
     [:thead.bg-gray-50.text-gray-500
      [:tr.border-b.border-gray-200
@@ -104,7 +104,7 @@
 
 (defn url-table [data]
   [:div.overflow-x-auto.rounded.shadow.border.border-gray-300.flex-auto
-   {:style {:min-width 200 :min-height 100}}
+   {:style {:min-height 100}}
    [:table.divide-y.divide-gray-200.text-xs.min-w-full
     [:thead.bg-gray-50.text-gray-500
      [:tr.border-b.border-gray-200
@@ -116,16 +116,19 @@
                data))]])
 
 (defn row-label [text]
-  [:label.mr-3.whitespace-nowrap.flex-shrink-0
+  [:label.mr-3.whitespace-nowrap.flex-shrink-0.text-right.font-medium
    {:style {:width 90}}
    text])
 
 (defn col-label [text]
-  [:label.block.mb-1
+  [:label.block.mb-1.font-medium
    text])
 
 (dc/defcard explorer
   [:div.text-sm
+   [:div.flex.flex-col.items-center.justify-center.my-6.pb-6.border-b-2.border-indigo-100
+    [:img.mb-3 {:src "/images/logo-medikanren.svg"}]
+    [:h1.font-bold.text-3xl.leading-none [:span.text-indigo-600 "medi"] [:span "Kanren"]]]
    [:div.grid.grid-cols-2.gap-8
     [:div
      [:div.flex.items-center
@@ -140,16 +143,18 @@
        [:div.flex.items-center
         {:style {:height 33}}
         [:input {:type "checkbox" :id input-id}]
-        [:label.ml-2 {:for input-id} "Show concept synonyms for CURIE searches"]])
+        [:label.ml-2.font-medium {:for input-id} "Show concept synonyms for CURIE searches"]])
      [:div.flex.mt-3
-      [row-label "Predicate 1"]
+      [:label.mr-3.whitespace-nowrap.flex-shrink-0.font-medium
+       {:style {:width 90}}
+       "Predicate 1"]
       [:textarea {:style {:min-height 100}}]]]]
    [:div.flex.items-center.relative.my-6
     {:style {:height 22}}
-    [:div.border-t.border-gray-200.w-full]
-    [:div.text-gray-500.absolute.bg-white.px-3
+    [:div.border-t-2.border-indigo-100.w-full]
+    [:div.text-indigo-600.absolute.bg-white.px-3.whitespace-nowrap.font-bold
      {:style {:top 0 :left "50%" :transform "translateX(-50%)"}}
-     "Concept 1 → Predicate 1 → [X] → Predicate 2 → Concept 2"]]
+     "Concept 1 → Predicate 1 → X → Predicate 2 → Concept 2"]]
    [:div.grid.grid-cols-2.gap-8
     [:div
      [:div.flex.items-center
@@ -163,26 +168,28 @@
        [:div.flex.items-center
         {:style {:height 33}}
         [:input {:type "checkbox" :id input-id}]
-        [:label.ml-2 {:for input-id} "Show concept synonyms for CURIE searches"]])
+        [:label.ml-2.font-medium {:for input-id} "Show concept synonyms for CURIE searches"]])
      [:div.flex.mt-3
-      [row-label "Concept 2"]
+      [:label.mr-3.whitespace-nowrap.flex-shrink-0.font-medium
+       {:style {:width 90}}
+       "Concept 2"]
       [:div.flex-auto
        [concept-table []]]]]]
-   [:div.border-t.border-gray-200.mt-6.pt-6
+   [:div.border-t-2.border-indigo-100.mt-6.pt-6
     [:div.flex.items-center
-     [:label.mr-3.whitespace-nowrap.flex-shrink-0.text-right
+     [:label.mr-3.whitespace-nowrap.flex-shrink-0.text-right.font-medium
       {:style {:width 90}}
       "Find in X’s"]
      [:input {:type "text"}]
      [:button.ml-3 "Previous"]
      [:button.ml-3 "Next"]]
     [:div.flex.mt-4
-     [:label.mr-3.whitespace-nowrap.flex-shrink-0.text-right
+     [:label.mr-3.whitespace-nowrap.flex-shrink-0.text-right.font-medium
       {:style {:width 90}}
       "X"]
      [x-table []]]
     [:div.flex.mt-4
-     [:label.mr-3.whitespace-nowrap.flex-shrink-0.text-right
+     [:label.mr-3.whitespace-nowrap.flex-shrink-0.text-right.font-medium
       {:style {:width 90}}
       "Paths"]
      [paths-table []]]
