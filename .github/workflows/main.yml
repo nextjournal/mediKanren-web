@@ -67,13 +67,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.NEXTJOURNAL_CI_SSH_KEY }}
 
-      - name: Compile ClojureScript (snapshot devcards/stories build)
+      - name: Build release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bb release:cljs
-
-      - name: Compile CSS
-        run: bb build:css
+        run: bb release
 
       - name: Build static devcards
         run: bb ./bin/build_static_snapshot.clj
