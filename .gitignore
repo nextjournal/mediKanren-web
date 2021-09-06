@@ -6,7 +6,7 @@
 /node_modules/
 /.shadow-cljs/
 .idea/
-medikanren.iml
+mediKanren-web.iml
 /public/images/
 /public/css/
 /public/js/
